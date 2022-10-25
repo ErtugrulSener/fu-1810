@@ -2,7 +2,7 @@
   "better-word-count",
   "simple-embeds",
   "table-editor-obsidian",
-  "obsidian-git",
   "obsidian-admonition",
-  "obsidian-better-codeblock"
+  "obsidian-better-codeblock",
+  "obsidian-git"
 ]

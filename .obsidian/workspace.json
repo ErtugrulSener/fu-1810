@@ -11,8 +11,12 @@
             "id": "184ca818ab8ea5bc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "ke02.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
         ]
@@ -81,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/kontextfreie_grammatik.png",
+                "file": "ke02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/kontextfreie_grammatik.png",
+                "file": "ke02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -121,12 +125,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/kontextfreie_grammatik.png"
+                "file": "ke02.md"
               }
+            }
+          },
+          {
+            "id": "7e84dd16dc2eae10",
+            "type": "leaf",
+            "state": {
+              "type": "side-panel-control-view",
+              "state": {}
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -135,7 +147,7 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "2d7ffd6a39354088",
+  "active": "184ca818ab8ea5bc",
   "lastOpenFiles": [
     "ke02.md",
     "ke01.md",

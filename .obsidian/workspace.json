@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "ke02.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               }
             }
@@ -143,9 +143,6 @@
     ],
     "direction": "horizontal",
     "width": 300
-  },
-  "ribbon": {
-    "mostRecentAction": ""
   },
   "active": "184ca818ab8ea5bc",
   "lastOpenFiles": [

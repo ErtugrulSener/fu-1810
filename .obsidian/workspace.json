@@ -131,7 +131,15 @@
             }
           },
           {
-            "id": "7e84dd16dc2eae10",
+            "id": "876869e9ec2a092c",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "35067577959df97a",
             "type": "leaf",
             "state": {
               "type": "side-panel-control-view",
@@ -139,7 +147,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",

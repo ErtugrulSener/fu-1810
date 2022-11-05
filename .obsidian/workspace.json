@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ke02.md",
-                "mode": "source",
+                "file": "ke03.md",
+                "mode": "preview",
                 "source": true
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ke02.md",
+                "file": "ke03.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ke02.md",
+                "file": "ke03.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ke02.md"
+                "file": "ke03.md"
               }
             }
           },
@@ -154,8 +154,8 @@
   },
   "active": "184ca818ab8ea5bc",
   "lastOpenFiles": [
-    "ke03.md",
     "ke02.md",
+    "ke03.md",
     "ke01.md",
     "Kurstext/KE_2.pdf",
     "Kurstext/KE_1.pdf",

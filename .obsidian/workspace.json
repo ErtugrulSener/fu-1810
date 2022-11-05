@@ -18,21 +18,8 @@
                 "source": true
               }
             }
-          },
-          {
-            "id": "e1e8a04cd157f7b2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ke03.md",
-                "mode": "source",
-                "source": true
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ke03.md",
+                "file": "ke02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ke03.md",
+                "file": "ke02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ke03.md"
+                "file": "ke02.md"
               }
             }
           },
@@ -165,10 +152,10 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "e1e8a04cd157f7b2",
+  "active": "184ca818ab8ea5bc",
   "lastOpenFiles": [
-    "ke02.md",
     "ke03.md",
+    "ke02.md",
     "ke01.md",
     "Kurstext/KE_2.pdf",
     "Kurstext/KE_1.pdf",

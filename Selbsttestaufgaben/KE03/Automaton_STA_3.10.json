@@ -1,0 +1,250 @@
+﻿{
+  "name": "STA_3.10",
+  "description": "",
+  "type": "DEA",
+  "automaton": {
+    "acceptCache": [],
+    "simulationInput": [],
+    "Alphabet": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "A",
+      "B"
+    ],
+    "StackAlphabet": [
+      "|"
+    ],
+    "States": [
+      {
+        "ID": 1,
+        "Name": "0",
+        "x": 160,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 1,
+            "Target": 2,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "A"
+            ]
+          },
+          {
+            "Source": 1,
+            "Target": 3,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "a"
+            ]
+          },
+          {
+            "Source": 1,
+            "Target": 4,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "b"
+            ]
+          }
+        ],
+        "Start": true
+      },
+      {
+        "ID": 2,
+        "Name": "1",
+        "x": 300,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [],
+        "Start": false
+      },
+      {
+        "ID": 3,
+        "Name": "2",
+        "x": 300,
+        "y": 290,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 3,
+            "Target": 5,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "B"
+            ]
+          },
+          {
+            "Source": 3,
+            "Target": 6,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "d"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 4,
+        "Name": "3",
+        "x": 290,
+        "y": 470,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 4,
+            "Target": 7,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "B"
+            ]
+          },
+          {
+            "Source": 4,
+            "Target": 8,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "d"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 5,
+        "Name": "4",
+        "x": 440,
+        "y": 290,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 5,
+            "Target": 9,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "b"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 6,
+        "Name": "5",
+        "x": 450,
+        "y": 430,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 6,
+            "Target": 10,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "e"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 7,
+        "Name": "6",
+        "x": 460,
+        "y": 590,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 7,
+            "Target": 11,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "c"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 8,
+        "Name": "7",
+        "x": 460,
+        "y": 720,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 8,
+            "Target": 12,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "d"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 9,
+        "Name": "8",
+        "x": 580,
+        "y": 290,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [],
+        "Start": false
+      },
+      {
+        "ID": 10,
+        "Name": "9",
+        "x": 580,
+        "y": 430,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [],
+        "Start": false
+      },
+      {
+        "ID": 11,
+        "Name": "10",
+        "x": 590,
+        "y": 590,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [],
+        "Start": false
+      },
+      {
+        "ID": 12,
+        "Name": "11",
+        "x": 590,
+        "y": 720,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [],
+        "Start": false
+      }
+    ],
+    "lastInputs": []
+  }
+}

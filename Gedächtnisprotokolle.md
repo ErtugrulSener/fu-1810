@@ -91,17 +91,18 @@ Eine kontextfreie Grammatik besteht aus dem Quadrupel G = (N, $\Sigma$, P, S) wo
 
 - Erzeugen von Zwischencode
 	- Input: Attributierter Syntaxbaum oder AST
-	- Output: 
+	- Output: Zwischencode
 
 - Codeoptimierung
-	- Input: 
-	- Output: 
+	- Input: Zwischencode
+	- Output: Zwischencode (optimiert)
 
 - Codeerzeugung
-	- Input: 
-	- Output: 
+	- Input: Zwischencode (optimiert)
+	- Output: Zielsprache / Zielcode
 
 ## Warum fasst man syntaktische und semantische Analyse nicht in einem Schritt zusammen?
+Der Input für die semantische Analyse ist ein vollständiger Syntaxbaum. Um bestimmte Semantiken zu erkennen z.B: Operatorüberladung muss der gesamte Ausdruck bekannt sein, erst dann kann man daraus die Semantik erschließen.
 
 # Parsen im Allgemeinen und Bottom-Up im Speziellen
 

@@ -1,3 +1,5 @@
+# Allgemeine Fragen
+
 ## Warum übersetzt man eigentlich?
 Weil man etwas nur in der Quellsprache A beschreiben kann, das Zielsystem aber nur die Zielsprache B versteht. Deshalb braucht es die Übersetzung.
 
@@ -58,8 +60,49 @@ ___
 	- Es gibt beim Interpreter standartmäßig keine Codeoptimierungsphase. Daher sind interpretierte Programme meist langsamer als kompilierte.
 
 ## Definition einer kontextfreien Grammatik
-Eine kontextfreie Grammatik besteht aus dem Quintupel:
-- Startwort S
-- Nichtterminale N
-- Terminale T
-- Produktionsregeln (N x T)
+Eine kontextfreie Grammatik besteht aus dem Quadrupel G = (N, $\Sigma$, P, S) wobei gillt:
+- N ist ein Alphabet aus Nichtterminalen
+- $\Sigma$ ist ein Alphabet von Terminalen. Die Alphabete N und $\Sigma$ sind disjunkt.
+- P $\subseteq$ N x (N $\cup$ $\Sigma$)* ist eine Menge von Produktionsregeln.
+- S € N ist das Startsymbol.
+
+# Vorgehensweise eines Übersetzers
+
+## Phasen des Übersetzerbaus
+
+## Benennen der Eingaben und Ausgaben für die Phasen der Analyse
+
+## Warum fasst man syntaktische und semantische Analyse nicht in einem Schritt zusammen?
+
+# Parsen im Allgemeinen und Bottom-Up im Speziellen
+
+## Wie unterscheiden sich Top-Down und Bottom-Up Parser?
+
+## Was ist ein Handle?
+
+## Warum heißen die Parser "Shift Reduce"?
+
+## Warum heißt der einfachste Shift-Reduce Parser "Operrator-Vorrang"?
+
+## Was sind Operatoren?
+
+## Mit eigenem Beispiel eine Oeprator Vorrang Tabelle erstellen. z.B: mit den Operatoren "+" und "*".
+
+## Was sind Relationen?
+
+## Was wird alles vom Stack genommen beim Reduce?
+
+# Top-Down Parser
+## Warum "Raten der Ableitungsregel"?
+
+## Beispielgrammatik aufschreiben, mit der man das Erreichen einer Sackgasse demonstrieren kann.
+
+## Aufzeichnen eines dazugehörigen Ableitungsbaumes.
+
+## Erklären sie "Predictive Parsing".
+
+## FIRST und FOLLOW Mengen - Was ist das?
+
+## Wie kommt man zu einer Analysetabelle wenn man diese Mengen hat?
+
+## Wann ist eine Grammatik nicht geeignet?

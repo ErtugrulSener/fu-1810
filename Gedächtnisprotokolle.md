@@ -1,5 +1,5 @@
 ## Warum übersetzt man eigentlich?
-Weil man etwas in der Quellsprache A besser lesen kann, das Zielsystem aber nur die Zielsprache B versteht. Deshalb braucht es die Übersetzung.
+Weil man etwas nur in der Quellsprache A beschreiben kann, das Zielsystem aber nur die Zielsprache B versteht. Deshalb braucht es die Übersetzung.
 
 ## Was wird alles übersetzt?
 1) Höhere Programmiersprache (z.B: C++) in Maschinensprache

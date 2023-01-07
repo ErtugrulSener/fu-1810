@@ -69,8 +69,37 @@ Eine kontextfreie Grammatik besteht aus dem Quadrupel G = (N, $\Sigma$, P, S) wo
 # Vorgehensweise eines Übersetzers
 
 ## Phasen des Übersetzerbaus
+- Lexikalische Analyse
+- Syntaxanalyse
+- Semantische Analyse
+- Erzeugen von Zwischencode
+- Codeoptimierung
+- Codeerzeugung
 
 ## Benennen der Eingaben und Ausgaben für die Phasen der Analyse
+- Lexikalische Analyse
+	- Input: Zeichenfolge
+	- Output: Tokenfolge
+
+- Syntaxanalyse
+	- Input: Tokenfolge
+	- Output: Syntaxbaum
+
+- Semantische Analyse
+	- Input: Syntaxbaum
+	- Output: Attributierter Syntaxbaum oder AST
+
+- Erzeugen von Zwischencode
+	- Input: Attributierter Syntaxbaum oder AST
+	- Output: 
+
+- Codeoptimierung
+	- Input: 
+	- Output: 
+
+- Codeerzeugung
+	- Input: 
+	- Output: 
 
 ## Warum fasst man syntaktische und semantische Analyse nicht in einem Schritt zusammen?
 

@@ -133,7 +133,7 @@ Eine kontextfreie Grammatik besteht aus dem Quadrupel G = (N, $\Sigma$, P, S) wo
 - P $\subseteq$ N x (N $\cup$ $\Sigma$)* ist eine Menge von Produktionsregeln.
 - S € N ist das Startsymbol.
 
-## Syntaxanalyse: Welche Verfahren gibt es?
+## Syntaxanalyse: Welche Verfahren gibt es? (1)
 Allgemein: Das Ziel ist es aus einer Tokenfolge einen (abstrakten) Syntaxbaum zu erzeugen. Das geht mittels:
 - Top-Down Analyse 
 	- Der Syntaxbaum wird von oben nach unten erzeugt. Es werden Eingabefolgen anhand von Linksableitungen erkannt. Kann nicht mit Linksrekursionen umgehen (Grammatik muss bei Linksrekursionen erst umgeformt werden. Das geht nicht immer). Gefahr von Sackgassen und Backtracking. Deshalb LL(1) Grammatik. Generelles Vorgehen: Auf dem Stack stehen Nichtterminale. Diese werden mit den Eingabetoken vergleichen. Die Nichtterminale werden anhand der Analysetabelle so lange reduziert bis sich auf dem Stack ein Terminal gleich dem Eingabeterminal befindet. Dann wird weitergelesen. Wenn es keine passende Reduktion gibt, dann Fehler.  
@@ -194,23 +194,32 @@ Wenn die Beziehung zwischen dem obersten Element auf dem Stack und der Eingabe "
 ## Was passiert genau auf dem Stack?
 Auf dem Stack werden die Beziehungen, die reduzierten Nichtterminale und die eingelesenen Token abgelegt. Die Eingabe wird wieder so lange auf dem Stack abgelegt während die Beziehungen "<" oder "=" gelten. 
 
-## Wie unterscheiden sich Top-Down und Bottom-Up Parser?
-
 ## Was ist ein Handle?
+Ein Handle ist die rechte Seite einer Produktion, durch die ersetzt wird. Somit wird der Reduktionsprozess erfolgreich zuende geführt.
 
 ## Warum heißen die Parser "Shift Reduce"?
+Weil das die wesentlichen Aktionen des Parsers sind (neben accept und error). Bei:
+
+shift - wird das nächste Symbol der Eingabefolge entnommen und auf den Stack gelegt.
+
+reduce - ein Handle $\beta$ einer Produktion $A -> \beta$ bildet das obere Ende eines Stacks. Man ersetzt $\beta$ auf dem Stack durch A.
 
 ## Warum heißt der einfachste Shift-Reduce Parser "Operrator-Vorrang"?
+Sie wurde speziell für die Syntaxanalyse arithmetischer Ausdrücke entwickelt und ist das schwächste Bottom-Up-Verfahren. Für jedes Aufeinandertreffen zweier Operatoren wird ein Vorrang (anhand der Relationen) festgelegt.
 
 ## Was sind Operatoren?
-
-## Mit eigenem Beispiel eine Oeprator Vorrang Tabelle erstellen. z.B: mit den Operatoren "+" und "*".
+Alle Terminale / Arithmetischer Operatoren? (+, -, \*, / ...)
 
 ## Was sind Relationen?
+\<. - Shift
+\= - Shift
+\>. - Reduce
+
+Die Spitzen Klammern zeigen die Grenzen des Handles, die Gleich-Relation zeigt die Beziehung zwischen den Symbolen innerhalb des Handles.
 
 ## Was wird alles vom Stack genommen beim Reduce?
+Kommt auf die Produktion an, zu der reduziert wird (bzw. die rechte Seite der Produktion). Wenn die Produktion 4 Symbole besitzt, werden die 4 Symbole und die Relationen zwischen ihnen vom Stack genommen.
 
-# KE 3
 ## Warum "Raten der Ableitungsregel"?
 
 ## Beispielgrammatik aufschreiben, mit der man das Erreichen einer Sackgasse demonstrieren kann.

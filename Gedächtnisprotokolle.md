@@ -1,8 +1,8 @@
 # KE 1
-## Warum übersetzt man eigentlich? (1)
+## Warum übersetzt man eigentlich? (2)
 Weil man etwas nur in der Quellsprache A beschreiben kann, das Zielsystem aber nur die Zielsprache B versteht. Deshalb braucht es die Übersetzung.
 
-## Was wird alles übersetzt? (1)
+## Was wird alles übersetzt? (2)
 1) Höhere Programmiersprache (z.B: C++) in Maschinensprache
 	- (durch Transpiler) z.B: typisierte Programmiersprache (Typescript) in andere Programmiersprache (Javascript)
 
@@ -58,7 +58,7 @@ ___
 
 	- Es gibt beim Interpreter standartmäßig keine Codeoptimierungsphase. Daher sind interpretierte Programme meist langsamer als kompilierte.
 
-## Was ist der Unterschied zwischen Compiler und Interpreter?
+## Was ist der Unterschied zwischen Compiler und Interpreter? (1)
 Compiler:
 - übersetzt gesamte Eingabe
 - Ausführung erst zu späterem Zeitpunkt
@@ -104,7 +104,18 @@ Mischform: Compiler übersetzt Programm in einfachen Zwischencode, der zur Laufz
 	- Input: Zwischencode (optimiert)
 	- Output: Zielsprache / Zielcode
 
-## Was sind die logischen Schritte einer Übersetzung?
+## Was passiert global über allen Phasen?
+Fehlererkennung und Symbtoltabelle
+
+## Welche Zwischensprachen kennen Sie?
+3AC, Postfix Notation
+
+## Wie wird Postfix-Notation verarbeitet? 
+Es werden zuerst die Operanden und danach die ausführende Operation geschrieben. Bsp. b c + bedeutet b+c
+
+Operationen entnehmen die obersten Elemente vom Stack, führen die Operation aus und legen das Ergebnis wieder auf den Stack.
+
+## Was sind die logischen Schritte einer Übersetzung? (3)
 2 Phasen: Analysephase und Synthesephase.
 Der Übersetzungsprozess ist unterteilt in 6 Schritte.
 - Lexikalische Analyse => Tokenerkennung mit Hilfe von Regulären Ausdrücken und deterministischen endlichen Automaten
@@ -122,18 +133,30 @@ Der Übersetzungsprozess ist unterteilt in 6 Schritte.
 ## Warum fasst man syntaktische und semantische Analyse nicht in einem Schritt zusammen?
 Der Input für die semantische Analyse ist ein vollständiger Syntaxbaum. Um bestimmte Semantiken zu erkennen z.B: Operatorüberladung muss der gesamte Ausdruck bekannt sein, erst dann kann man daraus die Semantik erschließen.
 
+## Was ist ein regulärer Ausdruck?
+Ein regulärer Ausdruck ist eine Zeichenfolge, die der Beschreibung von Mengen von Zeichenketten mit Hilfe bestimmter syntaktischer Regeln dient.
+
 # KE 2
 ## Was ist eine kontextfreie Grammatik?
 Eine Kontextfreie Grammatik beschreibt kontextfreie Sprachen. Mit Hilfe der kontextfreien Grammatik lassen sich Syntaxregeln überprüfen. Es werden jeweils Produktionen anhand von Produktionsregeln erkannt und angewandt, wobei die Produktionen keine Abhängigkeiten auf der linken Seite haben dürfen (sonst sind diese kontextsensitiv), d.h. es steht nur ein Nichtterminal auf der linken Seite der Produktion.
 
-## Definition einer kontextfreien Grammatik
+## Welche Sprachen eignen sich als Quellsprachen für einen Übersetzer?
+Sprachen mit einer kontextfreien Grammatik
+
+## Definition einer kontextfreien Grammatik (1)
 Eine kontextfreie Grammatik besteht aus dem Quadrupel G = (N, $\Sigma$, P, S) wobei gillt:
 - N ist ein Alphabet aus Nichtterminalen
 - $\Sigma$ ist ein Alphabet von Terminalen. Die Alphabete N und $\Sigma$ sind disjunkt.
 - P $\subseteq$ N x (N $\cup$ $\Sigma$)* ist eine Menge von Produktionsregeln.
 - S € N ist das Startsymbol.
+- 
+## DEA erklären
+erkennt reguläre Ausdrücke Implementierung DEA per Hand: 
+Zustandsdiagramme implementieren (nur kurs angedeutet)
+Implementierung DEA per Lex: Lex überführt die Spezifikation in C-Quellcode. Die Lex-Spezifikation enthält C-Code (z.B. return TOKEN). Token werden an den Parser weitergereicht. 
+Mein Beispiel (nicht wirklich Lex): RegExp: NUMBER [0-9]* -> return NUMBER -> Rückfrage: Und wie kommt die Zahl selbst in den Scanner: yylval
 
-## Syntaxanalyse: Welche Verfahren gibt es? (1)
+## Syntaxanalyse: Welche Verfahren gibt es? (3)
 Allgemein: Das Ziel ist es aus einer Tokenfolge einen (abstrakten) Syntaxbaum zu erzeugen. Das geht mittels:
 - Top-Down Analyse 
 	- Der Syntaxbaum wird von oben nach unten erzeugt. Es werden Eingabefolgen anhand von Linksableitungen erkannt. Kann nicht mit Linksrekursionen umgehen (Grammatik muss bei Linksrekursionen erst umgeformt werden. Das geht nicht immer). Gefahr von Sackgassen und Backtracking. Deshalb LL(1) Grammatik. Generelles Vorgehen: Auf dem Stack stehen Nichtterminale. Diese werden mit den Eingabetoken vergleichen. Die Nichtterminale werden anhand der Analysetabelle so lange reduziert bis sich auf dem Stack ein Terminal gleich dem Eingabeterminal befindet. Dann wird weitergelesen. Wenn es keine passende Reduktion gibt, dann Fehler.  
@@ -152,7 +175,7 @@ Wenn es keine passende Produktion gibt (kein Eintrag in Analysetabelle) => Fehle
 ## Was ist hier eine abstrakte Maschine?
 Ein Mechanismus bestehnd aus Stack, Eingabe, Analysetabelle und Ausgabe.
 
-## Wie wird eine Analysetabelle erstellt?
+## Wie wird eine Analysetabelle erstellt? (1)
 Es werden die Steuermengen (FIRST und ggf. FOLLOW) und die Nummer der entsprechenden Produktionen eingetragen. In der linken Spalte sind alle Nichtterminale aufgelistet, in der "Oberen" alle Terminale.
 
 ## Was macht ein Vorgreifender Analysator?
@@ -165,6 +188,9 @@ Es wird am Anfang die Startprozedur aufgerufen. Der Baum ergibt sich dann aus de
 
 Falls das Eingabetoken an der Stelle nicht erwartet ist, läuft man in einen Fehler.
 
+## Welche Möglichkeiten hat man, die Top-Down-Analyse mit Vorausschau durchzuführen? 
+Mit Analysetabelle und mit rekursivem Abstieg.
+
 ## Wie wird die Steuermenge bestimmt?
 Dafür werden zuerst die FIRST Mengen bestimmt. Die FIRST Mengen sind alle Terminale, mit denen ein aus einem Nichtterminal abgeleiteter String beginnen kann. 
 
@@ -173,6 +199,14 @@ Falls ein Epsilon abgeleitet wird, werden noch die FOLLOW Mengen benötigt. Die 
 Aus diesen Mengen zusammen wird die Steuermenge bestimmt. Falls es mehrere Produktionen für ein Nichtterminal gibt, wird die Steuermenge entsprechend aufgeteilt für jede Produktion. Es gibt eine Steuermenge je Produktion.
 
 Voraussetzung ist, dass für jedes Nichtterminal die Steuermengen seiner Alternativen disjunkt sind, sonst ist diese Grammatik nicht vom Typ LL(1) - Es gäbe eine Mehrdeutigkeit.
+
+## Welche Arten von Grundsymbolen hat eine Programmiersprache üblicherweise?
+- Wortsymbole: if, while, begin...
+- Variablennamen: int, float...
+- Numerische Konstanten: 3L
+
+## Und wozu brauche ich bei der Definition der Steuermengen noch die FOLLOW-Mengen?
+Weil es sein kann, dass man aus α ε ableiten kann. Das heißt alles was auf das Nichtterminal A (linke Seite der Produktion) folgen kann, kann an dem Auftreten des Symbols α folgen.
 
 ## Bottom-Up Analyse: Was ist ein Shift-Reduce-Parser?
 Ein Shift Reduce Parser liest die Eingabetoken ein und legt diese auf den Stack ab. Nach jedem Einlesen wird entschieden, ob es eine Produktion der eingelesenen Folge gibt. (Handle b: A -> b) Falls ja, wird reduce angewandt und es wird b durch A auf dem Stack ersetzt. Falls nein, wird geshiftet und die nächste Eingabefolge eingelesen. 
@@ -184,7 +218,7 @@ Wesentliches Problem ist es zu entscheiden, ob eine vollständige Seite reduzier
 
 Bei mehrdeutigen Grammatiken kann es zu Shift/Reduce Konflikten kommen. (z.B. dangling else Problem).
 
-## Welches ist das einfachste Verfahren
+## Welches ist das einfachste Shift-Reduce Verfahren? (1)
 Operator Vorrang-Analyse 
 Wurde speziell für die Eingabe von arithmetischen Ausdrücken entwickelt und eignet sich somit nicht für beliebge Grammatiken => schwächstes Verfahren. 
 
@@ -233,3 +267,29 @@ Kommt auf die Produktion an, zu der reduziert wird (bzw. die rechte Seite der Pr
 ## Wie kommt man zu einer Analysetabelle wenn man diese Mengen hat?
 
 ## Wann ist eine Grammatik nicht geeignet?
+
+# KE 3
+## Was sind "attributierte Grammatiken"?
+- Erweitern die kontextfreie Grammatik um Attritbute.
+- Semantik kann kontextsensitiv überprüft werden. z.B. Typecheck, Deklaration von Variablen vor der verwendung...
+
+# KE 4
+## synthetisierte & vererbte Attribute erklären und unterscheiden
+Attribute können entweder synthetisiert, oder vererbt auftreten.
+- Synthetisiert: Das Attribut wird aus den Attributen der Kinderknoten berechnet. => Semantische Werte werden einfach hochgereicht.
+- Vererbt: Das Attribut wird von Eltern oder Geschwisterknoten berechnet. => Der Wert wird von einem Teilbaum in den anderen Teilbaum hineingegeben.
+
+## S-attributierte Definition & L-attributierte Definition erklären & unterscheiden 
+S-Attributiert: Alle Attribute werden synthetisiert. Bsp:
+```
+E -> AB {E.val := A.val + B.val}
+```
+L-Attributiert: Man darf nur von linken Geschwisterknoten erben, oder vom Elternknoten. Das L steht für "von links nach rechts". Bsp: 
+```
+E -> AB {B.val := A.val}
+
+oder:
+
+E -> AB {A.val := E.val
+		B.val := A.val}
+```

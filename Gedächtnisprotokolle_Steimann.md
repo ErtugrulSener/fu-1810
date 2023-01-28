@@ -65,8 +65,17 @@ LR-Parser
 - *LALR-Parser* (Merge von gleichen Zuständen von kanonischen LR-Parsern, Verbessertes Verfahren um LALR(1)-Tabelle zu bestimmen, ohne kanonische LR(0)-Kollektion zu bestimmen)
 
 ## Warum parst man mit kontextfreien Sprachen?
+Frage: Warum? Weil Reg Ex nicht alle Strukturen abbilden kann?
+Oder bezieht sich die Frage hier auf kontextsensitive Sprachen?
+
+## Sind alle Programmiersprachen kontextfrei,- (nein kontextsensitiv, Behelf mit attributierter Grammatik).
 
 ## Beschreiben Sie die LR-Analyse.
+Bei der LR-Analyse kommen LR-Parser zur Nutzung. Sie gehören zur mächtigsten Klasse von Shift-Reduce-Parsern. LR-Parser liest von links nach rechts und erkennt eine Rechtsableitung (in umgekehrter Reihenfolge).
+
+Es gibt verschiedene Methoden, um die Tabelle (mit Action und Goto) zu konstruieren (SLR, kanonische LR, LALR), grundsätzlich unterscheidet sich der LR-Parser vom Shift-Reduce-Parser aber an den auf dem Stack verwalteten Informationen und der Struktur der Analysetabelle.
+
+Auf dem Stack wird eine alternierende Folge verwaltet, das aus Grammatiksymbolen und Zuständen besteht. Theoretisch bräuchte man sogar nur die Zustände.
 
 ## Warum gibt es neben der syntaktischen noch die semantische Analyse?
 
@@ -75,6 +84,8 @@ LR-Parser
 ## Wozu braucht man Symboltabellen?
 
 ## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern.
+
+## Wieso sind Programmiersprachen nicht regulär?
 
 ## Kann jede Programmiersprache auf Basis von kontextfreien Grammatiken übersetzt werden? (Das wusste ich nicht so genau. Hab gesagt nein und das war auch richtig. Siehe semantische Phase!)
 Nein?

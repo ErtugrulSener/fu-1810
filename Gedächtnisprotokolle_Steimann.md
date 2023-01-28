@@ -78,14 +78,43 @@ Es gibt verschiedene Methoden, um die Tabelle (mit Action und Goto) zu konstruie
 Auf dem Stack wird eine alternierende Folge verwaltet, das aus Grammatiksymbolen und Zuständen besteht. Theoretisch bräuchte man sogar nur die Zustände.
 
 ## Warum gibt es neben der syntaktischen noch die semantische Analyse?
+Das Ergebnis der Syntaxanalyse ist ein Syntaxbaum. Das nächste Ziel ist es, aus dem gegebenen Baum Programme der Zielsprache der Übersetzung zu generieren.
+
+In der Praxis werden Übersetzungsschritte verzahnt durchgeführt, sobald Teilstrukturen des Ableitungsbaums erkannt sind, es muss nicht der gesamte Baum aufgebaut werden.
 
 ## Was ist eine attributierte Grammatik?
+![[ke04#Lehrziel-Fragen#attributierte Grammatik]]
 
 ## Wozu braucht man Symboltabellen?
+Symboltabellen enthalten wichtige Informationen, die zur Phasen der Optimierung und Codeerzeugung zur Verfügung stehen.
+
+Zur Laufzeit benötigt das Programm diese Informationen nicht mehr.
 
 ## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern.
+Maschinenunabhängige Optimierung:
+- lokale Optimierung
+	- Konstantenpropagation und Konstantenfaltung
+	- Kopierpropagation
+	- Reduktion der Stärke von Operatoren
+	- In-Line Expansion
+	- Elimination redundanter Berechnungen
+
+- Schleifenoptimierung
+	- Verlagerung von Schleifeninvarianten
+	- Vereinfachung von Berechnungen mit Schleifenvariablen
+	- Schleifenentfaltung
+
+- globale Optimierung
+	- Eliminiation toten Codes
+	- Code Hoisting
+
+Maschinenabhängige Optimierung:
+- Anweisungsreihenfolge und Registerauswahl
+- Befehlsauswahl
+- Peephole Opimization
 
 ## Wieso sind Programmiersprachen nicht regulär?
+Weil sich nicht jede Programmiersprache (oder vermutlich die Wenigsten) durch einen regulären Ausdruck beschreiben lassen. Auch wenn die Sprache sehr regelmäßig aufgebaut ist, bedeutet das nicht, dass sie regulär ist.
 
 ## Kann jede Programmiersprache auf Basis von kontextfreien Grammatiken übersetzt werden? (Das wusste ich nicht so genau. Hab gesagt nein und das war auch richtig. Siehe semantische Phase!)
 Nein?

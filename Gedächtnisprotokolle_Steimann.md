@@ -38,6 +38,18 @@ Hab gesagt um z.B Typdefinition von Bezeichnern zu merken. Auch weil die eventue
 Wiki:“Eine Attributgrammatik ist eine kontextfreie Grammatik, die um Attribute sowie Regeln und Bedingungen erweitert ist. Angewandt wird das Konzept im Compilerbau, um beispielsweise die Einhaltung von Regeln zu überprüfen, die mit kontextfreien Grammatiken nicht formuliert werden können. Solche Regeln sind z. B. die, dass jede Variable deklariert sein muss und ihrem Datentyp entsprechend verwendet wird“ Im Nachhinein hat er auch angemerkt, dass der Teil der Semantikanalyse wohl mein Schwachpunkt war.
 
 ## Welchen ZC kennen Sie? Hab 3AC genannt und kurz was dazu gesagt
+3AC - Jeder Befehl besitzt hier maximal 3 Argumente
+
+```C
+x := a + b
+```
+
+Die Argumente sind dabei (Adressen von) Variablen oder Konstanten.
+Außerdem können Befehle mit Sprungmarken versehen werden. Beispiel:
+
+```C
+L1: x := y[i]
+```
 
 ## Jeweils n Beispiel für eine Optimierung 
 Algebraische: Hab gesagt Zusammenfassung von arithmetischen Ausdrücken

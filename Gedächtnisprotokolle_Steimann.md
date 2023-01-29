@@ -57,6 +57,11 @@ Eine reguläre Sprache wird induktiv definiert anhand folgender Regeln:
 ## Welche Arten der Syntaxanalyse gibt es? Top Down Bottom Up. Bisschen die Unterschiede erklärt. (2)
 ![[Gedächtnisprotokolle_Güting#Syntaxanalyse: Welche Verfahren gibt es? (3)]]
 ## Was setzt jede Variante der Top-down-Analyse voraus?
+- Eine LL(1) - Grammatik
+	- Keine Linksrekursionen
+	- Alle Varianten der Produktionsregeln sind disjunkt
+
+- Linksrekursion in Rechtsrekursion überführen
 S -> A
 C -> d
 A -> A b | C
@@ -75,7 +80,7 @@ Dabei muss die Grammatik unter Umständen umgeformt werden, um Linksrekursionen 
 
 ## Welche Verfahren gibt es bei der Bottom-up-Analyse? Welche Parser sind mächtiger? (2)
 Shift-Reduce-Parser:
-- Operator-Vorrangmethode
+- *Operator-Vorrangmethode*
 
 LR-Parser
 - *SLR-Verfahren* (Kanonische LR(0)-Kollektion berechnen)
@@ -84,9 +89,18 @@ LR-Parser
 
 ## Warum parst man mit kontextfreien Grammatiken?
 Frage: Warum? Weil Reg Ex nicht alle Strukturen abbilden kann?
+
 Oder bezieht sich die Frage hier auf kontextsensitive Sprachen?
+Zwei Dinge die nicht funktionieren:
+
+*1)*
+(((( expr ))))
+
+*2)*
+Z -> b Z
 
 ## Sind alle Programmiersprachen kontextfrei,- (nein kontextsensitiv, Behelf mit attributierter Grammatik).
+Nein, für die Syntaxanalyse (Syntaxbaum) reicht eine kontextfreie Grammatik. Für weitere Schritte allerdings nicht mehr.
 
 ## Beschreiben Sie die LR-Analyse.
 Bei der LR-Analyse kommen LR-Parser zur Nutzung. Sie gehören zur mächtigsten Klasse von Shift-Reduce-Parsern. LR-Parser liest von links nach rechts und erkennt eine Rechtsableitung (in umgekehrter Reihenfolge).

@@ -80,7 +80,7 @@ LR-Parser
 - *Kanonische LR-Parser* (FOLLOW Mengen des gerade erreichen Zustands berechnen, verhindert Reduce/Reduce Konflikte, man nutzt LR(1)-Elemente)
 - *LALR-Parser* (Merge von gleichen Zuständen von kanonischen LR-Parsern, Verbessertes Verfahren um LALR(1)-Tabelle zu bestimmen, ohne kanonische LR(0)-Kollektion zu bestimmen)
 
-## Warum parst man mit kontextfreien Sprachen?
+## Warum parst man mit kontextfreien Grammatiken?
 Frage: Warum? Weil Reg Ex nicht alle Strukturen abbilden kann?
 Oder bezieht sich die Frage hier auf kontextsensitive Sprachen?
 

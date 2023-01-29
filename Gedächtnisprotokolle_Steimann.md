@@ -23,7 +23,6 @@ Das erkennen von Token in einem Zeichenstrom anhand von regulären Ausdrücken. 
 Zeichenketten auf Basis syntaktischer Regeln, die es ermöglichen, Zeichenfolgen zu beschreiben. Sie beschreiben damit formal reguläre Sprachen.
 
 ## Zwischendurch habe ich die Handimplementierung eines Scanners auf Basis von Zustandsdiagrammen (NEAs) erläutert.
-Frage, wie geht das?
 
 ## Welche Aufgabe hat die Syntaxanalyse?
 Aufgabe der Syntaxanalyse ist es, hierarchische Strukturen in Programmen (oder anderen Texten) zu erkennen. Diese Strukturen lassen sich nicht mehr mir regulären Ausdrücken beschreiben, wohl aber mit kontextfreien Grammatiken.
@@ -34,10 +33,19 @@ Beispiele:
 - Schleifen
 - Prozedurdeklarationen
 
-Eingabe der Syntakanalyse ist die Tokenfolge, Ausgabe ist ein Syntaxbaum.
+Eingabe der Syntaxanalyse ist die Tokenfolge, Ausgabe ist ein Syntaxbaum.
+Eine der Hauptaufgaben liegt darin zu überprüfen, ob die Eingabefolge (Tokenstrom) einer korrekten Syntax folgt.
+
+Es ist explizit noch keine Semantik geprüft (Typechecking usw.).
 
 ## Was ist eine reguläre Sprache? Meinerseits verweise auf die induktive Definitionen. 
-Eien reguläre Sprache wird induktiv definiert anhand folgender Regeln:
+Die Struktur lexikalischer Symbole kann durch reguläre Ausdrücke beschrieben werden. Das heißt, die Menge der Zeichenketten, die auf ein Token abgebildet werden, ist die zum Ausdruck gehörige reguläre Sprache.
+
+Ein Beispiel für eine reguläre Sprache ist die Menge aller gültigen E-Mail-Adressen.
+
+---
+
+Eine reguläre Sprache wird induktiv definiert anhand folgender Regeln:
 
 1. Das leere Wort und die leere Menge {$\epsilon$} sind reguläre Sprachen.
 2. Für jedes a € $\Sigma$ ist {a} eine reguläre Sprache.

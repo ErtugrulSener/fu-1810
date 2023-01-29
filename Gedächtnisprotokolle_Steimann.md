@@ -1,4 +1,4 @@
-## Welche Phasen hat die Übersetzung? (1)
+## Welche Phasen hat die Übersetzung? (2)
 Die Übersetzung hat zwei übergeordnete Phasen:
 Analyse und Synthese
 
@@ -52,7 +52,7 @@ Eine reguläre Sprache wird induktiv definiert anhand folgender Regeln:
 3. Wenn R und S reguläre Sprachen sind, dann sind auch R $\cup$ S, RS und R* reguläre Sprachen.
 4. Nichts sonst ist eine reguläre Sprache über $\Sigma$.
 
-## Welche Arten der Syntaxanalyse gibt es? Top Down Bottom Up. Bisschen die Unterschiede erklärt. (1)
+## Welche Arten der Syntaxanalyse gibt es? Top Down Bottom Up. Bisschen die Unterschiede erklärt. (2)
 ![[Gedächtnisprotokolle_Güting#Syntaxanalyse: Welche Verfahren gibt es? (3)]]
 ## Was setzt jede Variante der Top-down-Analyse voraus?
 S -> A
@@ -71,7 +71,7 @@ Durch eine LL(1)-Grammatik, so ist es möglich auf jede Folge von Symbol (im Sta
 
 Dabei muss die Grammatik unter Umständen umgeformt werden, um Linksrekursionen zu vermeiden oder um sicherzustellen, dass die Steuermenge der Alternativen in Produktionen disjunkt sind.
 
-## Welche Verfahren gibt es bei der Bottom-up-Analyse? Welche Parser sind mächtiger? (1)
+## Welche Verfahren gibt es bei der Bottom-up-Analyse? Welche Parser sind mächtiger? (2)
 Shift-Reduce-Parser:
 - Operator-Vorrangmethode
 

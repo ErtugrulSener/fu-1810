@@ -1,8 +1,8 @@
 # KE 1
-## Warum übersetzt man eigentlich? (2)
+## Warum übersetzt man eigentlich? (3)
 Weil man etwas nur in der Quellsprache A beschreiben kann, das Zielsystem aber nur die Zielsprache B versteht. Deshalb braucht es die Übersetzung.
 
-## Was wird alles übersetzt? (2)
+## Was wird alles übersetzt? (3)
 1) Höhere Programmiersprache (z.B: C++) in Maschinensprache
 	- (durch Transpiler) z.B: typisierte Programmiersprache (Typescript) in andere Programmiersprache (Javascript)
 
@@ -58,7 +58,7 @@ ___
 
 	- Es gibt beim Interpreter standartmäßig keine Codeoptimierungsphase. Daher sind interpretierte Programme meist langsamer als kompilierte.
 
-## Was ist der Unterschied zwischen Compiler und Interpreter? (1)
+## Was ist der Unterschied zwischen Compiler und Interpreter? (2)
 Compiler:
 - übersetzt gesamte Eingabe
 - Ausführung erst zu späterem Zeitpunkt
@@ -115,7 +115,7 @@ Es werden zuerst die Operanden und danach die ausführende Operation geschrieben
 
 Operationen entnehmen die obersten Elemente vom Stack, führen die Operation aus und legen das Ergebnis wieder auf den Stack.
 
-## Was sind die logischen Schritte einer Übersetzung? (3)
+## Was sind die logischen Schritte einer Übersetzung? (4)
 2 Phasen: Analysephase und Synthesephase.
 Der Übersetzungsprozess ist unterteilt in 6 Schritte.
 - Lexikalische Analyse => Tokenerkennung mit Hilfe von Regulären Ausdrücken und deterministischen endlichen Automaten
@@ -143,7 +143,7 @@ Eine Kontextfreie Grammatik beschreibt kontextfreie Sprachen. Mit Hilfe der kont
 ## Welche Sprachen eignen sich als Quellsprachen für einen Übersetzer?
 Sprachen mit einer kontextfreien Grammatik
 
-## Definition einer kontextfreien Grammatik (1)
+## Definition einer kontextfreien Grammatik (2)
 Eine kontextfreie Grammatik besteht aus dem Quadrupel G = (N, $\Sigma$, P, S) wobei gillt:
 - N ist ein Alphabet aus Nichtterminalen
 - $\Sigma$ ist ein Alphabet von Terminalen. Die Alphabete N und $\Sigma$ sind disjunkt.
@@ -156,7 +156,7 @@ Zustandsdiagramme implementieren (nur kurs angedeutet)
 Implementierung DEA per Lex: Lex überführt die Spezifikation in C-Quellcode. Die Lex-Spezifikation enthält C-Code (z.B. return TOKEN). Token werden an den Parser weitergereicht. 
 Mein Beispiel (nicht wirklich Lex): RegExp: NUMBER [0-9]* -> return NUMBER -> Rückfrage: Und wie kommt die Zahl selbst in den Scanner: yylval
 
-## Syntaxanalyse: Welche Verfahren gibt es? (3)
+## Syntaxanalyse: Welche Verfahren gibt es? (4)
 Allgemein: Das Ziel ist es aus einer Tokenfolge einen (abstrakten) Syntaxbaum zu erzeugen. Das geht mittels:
 - Top-Down Analyse 
 	- Der Syntaxbaum wird von oben nach unten erzeugt. Es werden Eingabefolgen anhand von Linksableitungen erkannt. Kann nicht mit Linksrekursionen umgehen (Grammatik muss bei Linksrekursionen erst umgeformt werden. Das geht nicht immer). Gefahr von Sackgassen und Backtracking. Deshalb LL(1) Grammatik. Generelles Vorgehen: Auf dem Stack stehen Nichtterminale. Diese werden mit den Eingabetoken vergleichen. Die Nichtterminale werden anhand der Analysetabelle so lange reduziert bis sich auf dem Stack ein Terminal gleich dem Eingabeterminal befindet. Dann wird weitergelesen. Wenn es keine passende Reduktion gibt, dann Fehler.  
@@ -175,7 +175,7 @@ Wenn es keine passende Produktion gibt (kein Eintrag in Analysetabelle) => Fehle
 ## Was ist hier eine abstrakte Maschine?
 Ein Mechanismus bestehnd aus Stack, Eingabe, Analysetabelle und Ausgabe.
 
-## Wie wird eine Analysetabelle erstellt? (1)
+## Wie wird eine Analysetabelle erstellt? (2)
 Es werden die Steuermengen (FIRST und ggf. FOLLOW) und die Nummer der entsprechenden Produktionen eingetragen. In der linken Spalte sind alle Nichtterminale aufgelistet, in der "Oberen" alle Terminale.
 
 ## Was macht ein Vorgreifender Analysator?
@@ -218,7 +218,7 @@ Wesentliches Problem ist es zu entscheiden, ob eine vollständige Seite reduzier
 
 Bei mehrdeutigen Grammatiken kann es zu Shift/Reduce Konflikten kommen. (z.B. dangling else Problem).
 
-## Welches ist das einfachste Shift-Reduce Verfahren? (1)
+## Welches ist das einfachste Shift-Reduce Verfahren? (2)
 Operator Vorrang-Analyse 
 Wurde speziell für die Eingabe von arithmetischen Ausdrücken entwickelt und eignet sich somit nicht für beliebge Grammatiken => schwächstes Verfahren. 
 

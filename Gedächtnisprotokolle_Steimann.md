@@ -110,9 +110,17 @@ Es gibt verschiedene Methoden, um die Tabelle (mit Action und Goto) zu konstruie
 Auf dem Stack wird eine alternierende Folge verwaltet, das aus Grammatiksymbolen und Zuständen besteht. Theoretisch bräuchte man sogar nur die Zustände.
 
 ## Warum gibt es neben der syntaktischen noch die semantische Analyse?
-Das Ergebnis der Syntaxanalyse ist ein Syntaxbaum. Das nächste Ziel ist es, aus dem gegebenen Baum Programme der Zielsprache der Übersetzung zu generieren.
+Beispiel für einen Fall, bei dem das nicht geht:
 
-In der Praxis werden Übersetzungsschritte verzahnt durchgeführt, sobald Teilstrukturen des Ableitungsbaums erkannt sind, es muss nicht der gesamte Baum aufgebaut werden.
+```C
+func();
+
+int func();
+
+double func() {
+
+}
+```
 
 ## Was ist eine attributierte Grammatik?
 ![[ke04#Lehrziel-Fragen#attributierte Grammatik]]

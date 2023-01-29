@@ -54,14 +54,22 @@ Eine reguläre Sprache wird induktiv definiert anhand folgender Regeln:
 
 ## Welche Arten der Syntaxanalyse gibt es? Top Down Bottom Up. Bisschen die Unterschiede erklärt. (1)
 ![[Gedächtnisprotokolle_Güting#Syntaxanalyse: Welche Verfahren gibt es? (3)]]
-
 ## Was setzt jede Variante der Top-down-Analyse voraus?
-Frage: Das man eine kontextfreie Grammatik hat, bei der keine Linkrekursionen vorkommen?
+S -> A
+C -> d
+A -> A b | C
+
+=
+
+S -> A
+C -> d
+A -> b A' | C
+A' -> b A' | $\epsilon$
 
 ## Wodurch wird vorausschauende sackgassenfreie Analyse möglich?
 Durch eine LL(1)-Grammatik, so ist es möglich auf jede Folge von Symbol (im Stack) und Terminal (in Eingabefolge) eine Produktionsregel zur Ableitung auszuwählen.
 
-Dabei muss die Grammatik unter umständen umgeformt werden, um Linksrekursionen zu vermeiden oder um sicherzustellen, dass die Steuermenge der Alternativen in Produktionen disjunkt sind.
+Dabei muss die Grammatik unter Umständen umgeformt werden, um Linksrekursionen zu vermeiden oder um sicherzustellen, dass die Steuermenge der Alternativen in Produktionen disjunkt sind.
 
 ## Welche Verfahren gibt es bei der Bottom-up-Analyse? Welche Parser sind mächtiger? (1)
 Shift-Reduce-Parser:

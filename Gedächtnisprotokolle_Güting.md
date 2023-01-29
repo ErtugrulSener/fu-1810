@@ -257,16 +257,32 @@ Kommt auf die Produktion an, zu der reduziert wird (bzw. die rechte Seite der Pr
 ## Warum "Raten der Ableitungsregel"?
 
 ## Beispielgrammatik aufschreiben, mit der man das Erreichen einer Sackgasse demonstrieren kann.
+Eingabe:
+id id id
+
+Produktionsregeln:
+S -> B | id A
+A -> id A | €
+B -> C | d
+C -> abcd
 
 ## Aufzeichnen eines dazugehörigen Ableitungsbaumes.
+Ist im Kopf.
 
 ## Erklären sie "Predictive Parsing".
 
 ## FIRST und FOLLOW Mengen - Was ist das?
+- first(A) = { ... }
+- first(b) = { b }
+- first(abCDefg) = { a }
 
 ## Wie kommt man zu einer Analysetabelle wenn man diese Mengen hat?
+First + Follow (falls $\epsilon$) = Steuermenge
 
 ## Wann ist eine Grammatik nicht geeignet?
+- Ist keine LL(1)-Grammatik (weil zu ineffizient)
+	- hat Linksrekursionen (die man nicht auflösen kann)
+	- hat nicht disjunkte Alternativen für Produktionen
 
 # KE 3
 ## Was sind "attributierte Grammatiken"?
@@ -284,6 +300,7 @@ S-Attributiert: Alle Attribute werden synthetisiert. Bsp:
 ```
 E -> AB {E.val := A.val + B.val}
 ```
+
 L-Attributiert: Man darf nur von linken Geschwisterknoten erben, oder vom Elternknoten. Das L steht für "von links nach rechts". Bsp: 
 ```
 E -> AB {B.val := A.val}

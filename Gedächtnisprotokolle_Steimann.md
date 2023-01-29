@@ -36,10 +36,12 @@ Beispiele:
 Eingabe der Syntaxanalyse ist die Tokenfolge, Ausgabe ist ein Syntaxbaum.
 Eine der Hauptaufgaben liegt darin zu überprüfen, ob die Eingabefolge (Tokenstrom) einer korrekten Syntax folgt.
 
-Es ist explizit noch keine Semantik geprüft (Typechecking usw.).
-
 ## Was ist eine reguläre Sprache? Meinerseits verweise auf die induktive Definitionen. 
-Die Struktur lexikalischer Symbole kann durch reguläre Ausdrücke beschrieben werden. Das heißt, die Menge der Zeichenketten, die auf ein Token abgebildet werden, ist die zum Ausdruck gehörige reguläre Sprache.
+*Skript*:
+Die Menge der Zeichenketten, die auf ein Token abgebildet werden, ist die zum Ausdruck gehörige reguläre Sprache.
+
+*Für Menschen*:
+Eine reguläre Sprache ist die Menge aller Worte, die man aus einem regulären Ausdruck bilden kann.
 
 Ein Beispiel für eine reguläre Sprache ist die Menge aller gültigen E-Mail-Adressen.
 
@@ -47,7 +49,7 @@ Ein Beispiel für eine reguläre Sprache ist die Menge aller gültigen E-Mail-Ad
 
 Eine reguläre Sprache wird induktiv definiert anhand folgender Regeln:
 
-1. Das leere Wort und die leere Menge {$\epsilon$} sind reguläre Sprachen.
+1. Die Menge {$\epsilon$} und die leere Menge sind reguläre Sprachen.
 2. Für jedes a € $\Sigma$ ist {a} eine reguläre Sprache.
 3. Wenn R und S reguläre Sprachen sind, dann sind auch R $\cup$ S, RS und R* reguläre Sprachen.
 4. Nichts sonst ist eine reguläre Sprache über $\Sigma$.

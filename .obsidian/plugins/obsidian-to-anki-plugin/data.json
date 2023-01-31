@@ -1,7 +1,7 @@
 {
   "settings": {
     "CUSTOM_REGEXPS": {
-      "Einfach": "^#+(.+)\\n*((?:\\n*(?:^[^#]{0,2}$|^[^#]{3}(?<!<!--).*))+)",
+      "Einfach": "^#+\\s*(.+)\\n*((?:\\n*(?:^[^#]{0,2}$|^[^#]{3}(?<!<!--).*))+)",
       "Einfach (Antwort eintippen)": "",
       "Einfach (beide Richtungen)": "",
       "Einfach (eine oder zwei Richtungen)": "",
@@ -60,19 +60,7 @@
     }
   },
   "Added Media": [],
-  "File Hashes": {
-    "ke07.md": "ba6432b9a39d07aa9a60a50b431c32a7",
-    "ke06.md": "e7acc53ca3325b95b852b55b055bbc6a",
-    "ke05.md": "27e11dc13665735bd06ecb6fef00263b",
-    "ke04.md": "46bd29db3762622bbe8a098729d6d175",
-    "ke03.md": "4b6c0fad97d27276cef27743e12966da",
-    "ke02.md": "778ec04bb6fcbc6cd62217190d46a627",
-    "ke01.md": "aa79bf5c12d887699a9da68370ad834c",
-    "Gedächtnisprotokolle_Steimann.md": "ef177149ce628aace4ef19dbbb71e39b",
-    "Gedächtnisprotokolle_Güting.md": "f5c8eb98b1ba46437f14c13058436e20",
-    "test.md.md": "eb7d62d82ae38f8bb4b788c12bc08eb8",
-    "test.md": "88cfdbef6bebff8cf5bb4f1f906c83df"
-  },
+  "File Hashes": {},
   "fields_dict": {
     "Einfach": [
       "Vorderseite",

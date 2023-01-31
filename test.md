@@ -1,3 +1,0 @@
-abc #flashcard
-abc2
--+-

@@ -126,14 +126,11 @@ Beispiel für einen Fall, bei dem das nicht geht:
 ```C
 func();
 
-int func();
+int func() {
 
-double func() {
-
-}
-<!--ID: 1675153368353-->
-
+};
 ```
+<!--ID: 1675153368353-->
 
 ## Was ist eine attributierte Grammatik?
 ![[ke04#Lehrziel-Fragen#attributierte Grammatik]]

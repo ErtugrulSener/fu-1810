@@ -99,10 +99,7 @@ LR-Parser
 <!--ID: 1675153368317-->
 
 ## Warum parst man mit kontextfreien Grammatiken?
-Frage: Warum? Weil Reg Ex nicht alle Strukturen abbilden kann?
-
-Oder bezieht sich die Frage hier auf kontextsensitive Sprachen?
-Zwei Dinge die nicht funktionieren:
+Zwei Dinge die mit regulären Ausdrücken nicht funktionieren:
 
 *1)*
 (((( expr ))))
@@ -112,7 +109,7 @@ Z -> b Z
 <!--ID: 1675153368327-->
 
 ## Sind alle Programmiersprachen kontextfrei,- (nein kontextsensitiv, Behelf mit attributierter Grammatik).
-Nein, für die Syntaxanalyse (Syntaxbaum) reicht eine kontextfreie Grammatik. Für weitere Schritte allerdings nicht mehr.
+Nein, für die Syntaxanalyse (Syntaxbaum) reicht eine kontextfreie Grammatik. Für weitere Schritte (semantische Analyse) allerdings nicht mehr.
 <!--ID: 1675153368344-->
 
 ## Beschreiben Sie die LR-Analyse.

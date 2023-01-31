@@ -1,7 +1,7 @@
 {
   "settings": {
     "CUSTOM_REGEXPS": {
-      "Einfach": "^#+\\s*(.+)\\n*((?:\\n*(?:^[^#]{0,2}$|^[^#]{3}(?<!<!--).*))+)",
+      "Einfach": "^#+\\s*(.+)\\n*((?:\\n(?:^[^\\n#]{0,2}$|^[^\\n#].{3}(?<!<!--).*))+)",
       "Einfach (Antwort eintippen)": "",
       "Einfach (beide Richtungen)": "",
       "Einfach (eine oder zwei Richtungen)": "",
@@ -59,8 +59,23 @@
       "Add Obsidian Tags": false
     }
   },
-  "Added Media": [],
-  "File Hashes": {},
+  "Added Media": [
+    "flussgraph.png",
+    "bestandteile-eines-programmspeichers.png",
+    "speicherbereiche.png",
+    "kontextfreie-grammatik.png"
+  ],
+  "File Hashes": {
+    "ke07.md": "3df42849a9d8b22dcb1d9a0c0561c6ed",
+    "ke06.md": "a9db389c0c3609e1614eb0ab64c10a18",
+    "ke05.md": "1ed55df003dee053ea2378c097ff96d1",
+    "ke04.md": "86f8415146065d7cf0a3f17239cf26e9",
+    "ke03.md": "8c87a66e8d43a90c9e1c4b057a96a14d",
+    "ke02.md": "ee81e88dc2f57526f186f1d39963927c",
+    "ke01.md": "35e5680a6a737ccce551c4ee8162aec5",
+    "Gedächtnisprotokolle_Steimann.md": "ef177149ce628aace4ef19dbbb71e39b",
+    "Gedächtnisprotokolle_Güting.md": "c28b3bb8a405c7fb83ba5bbd3991a8b1"
+  },
   "fields_dict": {
     "Einfach": [
       "Vorderseite",

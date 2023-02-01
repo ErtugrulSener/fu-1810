@@ -142,28 +142,197 @@ Symboltabellen enthalten wichtige Informationen, die zur Phasen der Optimierung 
 Zur Laufzeit benötigt das Programm diese Informationen nicht mehr.
 <!--ID: 1675153368361-->
 
-## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern. (*)
+## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern. (*) (2)
 Maschinenunabhängige Optimierung:
-- lokale Optimierung
-	- Konstantenpropagation und Konstantenfaltung
-	- Kopierpropagation
-	- Reduktion der Stärke von Operatoren
-	- In-Line Expansion
-	- Elimination redundanter Berechnungen
+- *lokale Optimierung*
+- Konstantenpropagation und Konstantenfaltung
 
-- Schleifenoptimierung
-	- Verlagerung von Schleifeninvarianten
-	- Vereinfachung von Berechnungen mit Schleifenvariablen
-	- Schleifenentfaltung
+```
+x = 4
+func(x)
 
-- globale Optimierung
+// Konstantenpropagation
+func(4)
+
+---
+
+x = 4
+y = 5
+z = x * y
+
+// Konstantenfaltung
+z = 20
+```
+
+- Kopierpropagation
+```
+x = 4
+y = x
+z = y * 4
+
+// Kopierpropagation
+z = x * 4
+```
+
+- Reduktion der Stärke von Operatoren
+```
+x**2
+
+// Reduktion der Stärke von Operatoren
+wird zu:
+x*x
+```
+
+- In-Line Expansion
+```
+int main() {
+	func(4)
+}
+
+// In-Line Expansion
+int main() {
+	MOV R,2
+	ADD R,3
+	STORE R,S
+}
+
+// Jede Funktion würde ja einen Stack aufbauen, kostet Speicher
+// Sprungbefehl kostet CPU
+```
+
+- Elimination redundanter Berechnungen
+```
+Elimination redudanter Berechnungen
+(17) t7 = i-1
+(18) t8 = i-1
+(19) t9 = t8 * t7
+
+// Wegoptimieren von Zeile 18
+(18) 
+(19) t9 = t7 * t7
+```
+
+- *Optimierung mit Datenflussanalyse*
+	- *Schleifenoptimierung*
+		- Verlagerung von Schleifeninvarianten
+```C
+// Vorher:
+for (int i = 0; i < 5; i++) {
+	for (int j = 0; j < 5; j++) {
+		int b = i * 4 + j;
+	}
+}
+
+// Nachher:
+for (int i = 0; i < 5; i++) {
+	int temp = i * 4;
+	for (int j = 0; j < 5; j++) {
+		int b = temp + j;
+	}
+}
+```
+
+		- Vereinfachung von Berechnungen mit Schleifenvariablen
+```
+// Siehe Skript
+```
+
+		- Schleifenentfaltung
+```C
+// Vorher:
+for (int i = 0; i < 50000; i++) {
+	for (int j = 0; j < 2; j++) {
+		operation(i, j);
+	}
+}
+
+// Nachher:
+for (int i = 0; i < 5; i++) {
+	operation(i, 0);
+	operation(i, 1);
+}
+```
+
+- *globale Optimierung*
 	- Eliminiation toten Codes
-	- Code Hoisting
+```Java
+// Beispiel: Variable, die nicht gebraucht wird
+int a = 4;
+int b = 8;
 
-Maschinenabhängige Optimierung:
+System.out.println(a);
+```
+
+	- Code Hoisting
+```
+// Rausziehen von Teilausdrücken aus if/if-else/else Ausdrücken
+// weil man sie in allen Zweigen braucht.
+
+// Achtung: Man spart keine CPU, aber Speicher!
+```
+
+*Maschinenabhängige Optimierung:*
 - Anweisungsreihenfolge und Registerauswahl
+```
+T1 := a+b
+T2 := c+d
+T3 := e-T2
+T4 := T1-T3
+
+// Man könnte T1 unmittelbar bevor T4 berechnen und damit T1 im Register halten. Man spart sich damit ein "auslagern" und "wieder holen" von T1
+
+// Vorher:
+LOAD R,a
+ADD R,b
+LOAD S,c
+ADD S,d
+STORE R,T1
+LOAD R,e
+SUB R,S
+LOAD S,T1
+SUB S,R
+STORE S,T4
+
+// Nachher:
+LOAD R,c
+ADD R,d
+LOAD S,e
+SUB S,R
+LOAD R,a
+ADD R,b
+SUB R,S
+STORE S,T4
+```
+
 - Befehlsauswahl
+```
+z.B: INC i Erhöhe den Wert der Speicherzelle i um 1.
+
+statt
+
+LOAD R,i Lade den Wert der Speicherzelle i in Register R
+ADD R,1 Addiere 1 zum Register R
+STORE R,i Speichere Register R in der Speicherzelle i
+```
+
+weiteres Beispiel:
+```
+Ein weiteres Beispiel für eine optimierende Befehlsauswahl ist die Ersetzung einer Integer-Multiplikation mit 2 durch einen Shift-Left-Befehl.
+```
+
 - Peephole Opimization
+```
+Man kann eine Schablone über die Befehlszeilen schieben und Kandidaten erkennen. Daher auch der Name "Gucklock-Optimierung".
+
+// Beispiel:
+
+LOAD R,y
+ADD R,2
+STORE R,x
+LOAD R,x
+MULT R,3
+STORE R,z
+```
 <!--ID: 1675153368365-->
 
 ## Wieso sind Programmiersprachen nicht regulär?
@@ -171,26 +340,33 @@ Weil sich nicht jede Programmiersprache (oder vermutlich die Wenigsten) durch ei
 <!--ID: 1675153368369-->
 
 ## Kann jede Programmiersprache auf Basis von kontextfreien Grammatiken übersetzt werden? (Das wusste ich nicht so genau. Hab gesagt nein und das war auch richtig. Siehe semantische Phase!)
-Nein?
-Frage: Aber warum
+Für die Syntaxanalyse ja, für die semantische Analyse braucht man attributierte Grammatiken.
 <!--ID: 1675153368373-->
 
 ## Was ist eine attributierte Grammatik?
-Hier hing er dann weiter an der Frage zu welcher Sprachklasse die denn gehören? Das einzige was mir einfiel was höher war als kontextfrei waren von Turing Maschinen erkennbare. War aber falsch: Kontextsensitive Sprache(Also die von Turing Maschinen erkennbaren mit beschränkten Band glaub ich)
+*Kontextfreie Grammatiken* gehören zur Sprachklasse der kontextfreien Sprachen.
+
+*Attributierte Grammatiken* gehören zur Sprachklasse der kontexstsensitiven Sprachen.
+
+Eine attributierte Grammatik ist eine kontextfreie Grammatik, die um Attribute und Regeln zur Berechnung dieser Attribute (aus Attributen von in der Produktionsregeln vorkommenden Symbolen) erweitert wurde.
 
 ## Wofür brauchen wir die Attribute?
 Hab gesagt um z.B Typdefinition von Bezeichnern zu merken. Auch weil die eventuell später überprüft werden. Das war in Ansätzen das was er wollte, aber er hat mir da eine ganze Weile (bestimmt mehrere Minuten) noch etwas erklärt über Typdefinition etwa in der Richtung von dem hier bei 
+
 Wiki:“Eine Attributgrammatik ist eine kontextfreie Grammatik, die um Attribute sowie Regeln und Bedingungen erweitert ist. Angewandt wird das Konzept im Compilerbau, um beispielsweise die Einhaltung von Regeln zu überprüfen, die mit kontextfreien Grammatiken nicht formuliert werden können. Solche Regeln sind z. B. die, dass jede Variable deklariert sein muss und ihrem Datentyp entsprechend verwendet wird“ Im Nachhinein hat er auch angemerkt, dass der Teil der Semantikanalyse wohl mein Schwachpunkt war.
 <!--ID: 1675153368380-->
 
 ## Welchen ZC kennen Sie? Hab 3AC genannt und kurz was dazu gesagt
-3AC - Jeder Befehl besitzt hier maximal 3 Argumente
+- 3AC - Jeder Befehl besitzt hier maximal 3 Argumente
 
 ```C
 x := a + b
-<!--ID: 1675153368385-->
-
 ```
+
+- Postfix
+- DAG
+- AST
+<!--ID: 1675153368385-->
 
 Die Argumente sind dabei (Adressen von) Variablen oder Konstanten.
 Außerdem können Befehle mit Sprungmarken versehen werden. Beispiel:
@@ -198,8 +374,4 @@ Außerdem können Befehle mit Sprungmarken versehen werden. Beispiel:
 ```C
 L1: x := y[i]
 ```
-
-## Jeweils n Beispiel für eine Optimierung 
-Algebraische: Hab gesagt Zusammenfassung von arithmetischen Ausdrücken
-Maschinenunabhängige: Z.B Löschen von nicht verwendeten Variablen! Prozessorspezifisch: Fiel mir nichts ein, er schlug Registerallokation vor, also Anpassung an die Anzahl der Register des Prozessors z.B.
 <!--ID: 1675153368390-->

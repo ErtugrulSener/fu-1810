@@ -142,7 +142,7 @@ Symboltabellen enthalten wichtige Informationen, die zur Phasen der Optimierung 
 Zur Laufzeit benötigt das Programm diese Informationen nicht mehr.
 <!--ID: 1675153368361-->
 
-## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern.
+## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern. (*)
 Maschinenunabhängige Optimierung:
 - lokale Optimierung
 	- Konstantenpropagation und Konstantenfaltung

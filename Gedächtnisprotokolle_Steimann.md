@@ -366,7 +366,6 @@ x := a + b
 - Postfix
 - DAG
 - AST
-<!--ID: 1675153368385-->
 
 Die Argumente sind dabei (Adressen von) Variablen oder Konstanten.
 Außerdem können Befehle mit Sprungmarken versehen werden. Beispiel:

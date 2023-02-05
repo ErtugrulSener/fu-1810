@@ -213,8 +213,8 @@ Elimination redudanter Berechnungen
 ```
 
 - *Optimierung mit Datenflussanalyse*
-	- *Schleifenoptimierung*
-		- Verlagerung von Schleifeninvarianten
+- *Schleifenoptimierung*
+- Verlagerung von Schleifeninvarianten
 ```C
 // Vorher:
 for (int i = 0; i < 5; i++) {
@@ -254,7 +254,7 @@ for (int i = 0; i < 5; i++) {
 ```
 
 - *globale Optimierung*
-	- Eliminiation toten Codes
+- Eliminiation toten Codes
 ```Java
 // Beispiel: Variable, die nicht gebraucht wird
 int a = 4;

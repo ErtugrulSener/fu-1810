@@ -146,7 +146,6 @@ Zur Laufzeit benötigt das Programm diese Informationen nicht mehr.
 Maschinenunabhängige Optimierung:
 - *lokale Optimierung*
 - Konstantenpropagation und Konstantenfaltung
-
 ```
 x = 4
 func(x)
@@ -232,12 +231,12 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
-		- Vereinfachung von Berechnungen mit Schleifenvariablen
+- Vereinfachung von Berechnungen mit Schleifenvariablen
 ```
 // Siehe Skript
 ```
 
-		- Schleifenentfaltung
+- Schleifenentfaltung
 ```C
 // Vorher:
 for (int i = 0; i < 50000; i++) {
@@ -315,7 +314,8 @@ ADD R,1 Addiere 1 zum Register R
 STORE R,i Speichere Register R in der Speicherzelle i
 ```
 
-weiteres Beispiel:
+ODER
+
 ```
 Ein weiteres Beispiel für eine optimierende Befehlsauswahl ist die Ersetzung einer Integer-Multiplikation mit 2 durch einen Shift-Left-Befehl.
 ```

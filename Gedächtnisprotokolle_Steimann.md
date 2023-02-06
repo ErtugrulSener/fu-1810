@@ -61,7 +61,7 @@ Eine reguläre Sprache wird induktiv definiert anhand folgender Regeln:
 4. Nichts sonst ist eine reguläre Sprache über $\Sigma$.
 
 ## Welche Arten der Syntaxanalyse gibt es? Top Down Bottom Up. Bisschen die Unterschiede erklärt. (2)
-![[Gedächtnisprotokolle_Güting#Syntaxanalyse: Welche Verfahren gibt es? (3)]]
+![[Gedächtnisprotokolle_Güting#Syntaxanalyse: Welche Verfahren gibt es? (4)]]
 <!--ID: 1675153368301-->
 
 ## Was setzt jede Variante der Top-down-Analyse voraus?

@@ -143,7 +143,9 @@ Zur Laufzeit benötigt das Programm diese Informationen nicht mehr.
 <!--ID: 1675153368361-->
 
 ## Welche Codeoptimierungsverfahren gibt es? Nach der Aufzählung von allen im Kurstext genannten, sollte ich einige davon aussuchen und genauer erläutern. (*) (2)
-Maschinenunabhängige Optimierung:
+*Algebraische Optimierung*
+
+*Maschinenunabhängige Optimierung:*
 - *lokale Optimierung*
 - Konstantenpropagation und Konstantenfaltung
 ```
@@ -262,7 +264,7 @@ int b = 8;
 System.out.println(a);
 ```
 
-	- Code Hoisting
+- Code Hoisting
 ```
 // Rausziehen von Teilausdrücken aus if/if-else/else Ausdrücken
 // weil man sie in allen Zweigen braucht.
@@ -283,7 +285,7 @@ T4 := T1-T3
 // Vorher:
 LOAD R,a
 ADD R,b
-LOAD S,c
+LOAD S,c s
 ADD S,d
 STORE R,T1
 LOAD R,e

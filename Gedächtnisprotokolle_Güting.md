@@ -1,4 +1,5 @@
-# KE 1
+TARGET DECK: Gesprächsprotokolle_Güting
+
 ## Warum übersetzt man eigentlich? (3)
 Weil man etwas nur in der Quellsprache A beschreiben kann, das Zielsystem aber nur die Zielsprache B versteht. Deshalb braucht es die Übersetzung.
 <!--ID: 1675279228972-->

@@ -1,3 +1,5 @@
+TARGET DECK: Gesprächsprotokolle_Steimann
+
 ## Welche Phasen hat die Übersetzung? (2)
 Die Übersetzung hat zwei übergeordnete Phasen:
 Analyse und Synthese

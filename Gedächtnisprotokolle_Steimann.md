@@ -97,7 +97,7 @@ Shift-Reduce-Parser:
 LR-Parser
 - *SLR-Verfahren* (Kanonische LR(0)-Kollektion berechnen)
 - *Kanonische LR-Parser* (FOLLOW Mengen des gerade erreichen Zustands berechnen, verhindert Reduce/Reduce Konflikte, man nutzt LR(1)-Elemente)
-- *LALR-Parser* (Merge von gleichen Zuständen von kanonischen LR-Parsern, Verbessertes Verfahren um LALR(1)-Tabelle zu bestimmen, ohne kanonische LR(0)-Kollektion zu bestimmen)
+- *LALR-Parser* (Merge von gleichen Zuständen von kanonischen LR-Parsern, Verbessertes Verfahren um LALR(1)-Tabelle zu bestimmen, ohne kanonische LR(1)-Kollektion zu bestimmen)
 <!--ID: 1675153368317-->
 
 ## Warum parst man mit kontextfreien Grammatiken?
